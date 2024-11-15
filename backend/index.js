@@ -17,8 +17,17 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
+const allowedOrigins = ['http://localhost:5173',
+    'https://your-frontend.com'];
 const corsOptions= {
-    origin: 'http://localhost:5173',
+     origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true); // Allow if the origin is in the list
+    } else {
+      callback(new Error('Not allowed by CORS')); // Deny other origins
+    }
+  },
+   
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204,
