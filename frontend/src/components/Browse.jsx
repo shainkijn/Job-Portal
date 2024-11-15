@@ -15,7 +15,7 @@ const Browse = () => {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const res = await axios.get('http://localhost:8000/api/v1/job/get'); // Replace with your endpoint
+                const res = await axios.get('https://job-portal-backend-wkfc.onrender.comapi/v1/job/get'); // Replace with your endpoint
                 if (res.data.success) {
                     setAllJobs(res.data.jobs);
                 }
