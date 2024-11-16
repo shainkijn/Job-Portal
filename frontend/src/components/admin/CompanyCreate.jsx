@@ -17,7 +17,7 @@
 //     const registerNewCompany = async () => {
 //         try {
 //             console.log("first")
-//             const res = await axios.post('https://job-portal-backend-wkfc.onrender.com/register', {companyName}, {
+//             const res = await axios.post('https://job-portal-backend-wkfc.onrender.com/api/v1/company/register', {companyName}, {
 //                 headers:{
 //                     'Content-Type':'application/json'
 //                 },
