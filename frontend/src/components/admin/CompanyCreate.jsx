@@ -17,7 +17,7 @@ const CompanyCreate = () => {
     const registerNewCompany = async () => {
         try {
             console.log("first")
-            const res = await axios.post(`${COMPANY_API_END_POINT}/register`, {companyName}, {
+            const res = await axios.post('https://job-portal-backend-wkfc.onrender.com/register', {companyName}, {
                 headers:{
                     'Content-Type':'application/json'
                 },
